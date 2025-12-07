@@ -3,11 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Labb2 grupp66</title>   
-    <script src="script.js" defer></script>   
+    <title>Labb2 grupp66</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <!-- Sidhuvud med titel -->
+    <header class="input-group">
+        <h1 class="page-title">Lab 2 - Gruppn 66</h1>
+    </header>
+
+    <!-- Huvudinnehållet på sidan -->
+    <main class="container">
+
+        <!-- Första textfältet: användaren skriver in färg -->
+        <div class="input-group">
+            <label for="color">Färg:</label>
+            <!-- Textfält för färg – används senare för att ändra bakgrund på div -->
+            <input type="text" name="color" id="color" class="textfield">
+        </div>
+
+        <!-- Andra textfältet: användaren skriver in innehåll -->
+        <div class="input-group">
+            <label for="content">Innehåll:</label>
+            <!-- Textfält för text som ska visas i div-elementet -->
+            <input type="text" name="content" id="content" class="textfield">
+        </div>
+
+        <!-- Checkbox som styr stil på div-elementet -->
+        <div class="style">
+            <label for="divStyle">Stil på boxen</label>
+            <!-- Checkbox – när den ändras ska div få ny bakgrundsfärg -->
+            <input type="checkbox" name="divStyle" id="divStyle" class="checkbox">
+        </div>
+
+        <!-- Knapp som tar bort div-elementet vid klick -->
+        <div class="removeButton">
+            <button id="remove">Ta bort</button>
+        </div>
+        
+        <!-- Div som ska vara tom men är målelement för uppgift 5 och 6 -->
+        <div id="empty">
+            Den div ska egenligen vara tom
+        </div>
+
+    </main>
 </body>
+
+    <style>
+        body {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+            background-color: rgb(60, 60, 84);
+        }
+
+        h1 {
+            color: white; 
+            font-size: 2.5rem;
+         }
+
+        .input-group {
+            margin-bottom: 30px;
+            gap: 10px;
+            display: flex;
+            justify-content: space-between; /* label vänster, input höger */
+            width: 400px; /* valfritt, gör det snyggare */
+            margin: 10px auto; /* centrera hela raden på sidan */
+        }
+        #divStyle{
+            padding: 100px;
+            margin-left: 110px;
+            transform: scale(1.5);   /* gör den 50% större */
+   
+}
+
+        #empty {
+        min-height: 30px;
+        width: 400px;
+        border: 1px solid black;
+        margin-top: 20px;
+     
+
+        display: flex;              /* gör den till en flex-container */
+        align-items: center;        /* centrerar vertikalt */
+        justify-content: center;    /* centrerar horisontellt */
+        }
+        #remove{    
+            padding: 5px 20px 5px 20px;
+            margin-top: 15px;
+
+        }
+        .container {
+            border-radius: 10px;
+            border: 1px solid black; 
+            padding: 120px;
+            background-color: rgb(188, 192, 205); 
+            width: fit-content;
+            font-size: 20px;
+        }
+
+    </style>
+
+
 </html>
